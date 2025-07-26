@@ -1,12 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Cascadia_Mono } from "next/font/google";
+import { Cascadia_Mono, Fira_Code } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
 const CascadiaMono = Cascadia_Mono({
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-cascadia-mono'
+  display: 'swap'
+})
+
+const FiraCode = Fira_Code({
+  weight: "700",
+  subsets: ['latin'],
+  display: 'swap'
 })
 
 export default function Home() {
@@ -19,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className={`${styles.page} ${CascadiaMono.variable}`}
+        className={`${styles.page} ${CascadiaMono.className}`}
       >
         <main className={styles.main}>
           <Image
